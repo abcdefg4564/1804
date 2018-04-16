@@ -45,7 +45,10 @@
     <script type="text/javascript" src="/AK.js"></script>
     <script>
         Vue.component('my-component',{
-            template:'<h3>这是一个h3标签</h3>'
+            template:`<div>
+                    <h3>这是一个h3标签</h3>
+                    <h5>这是一个h5标签。Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit officiis sunt aliquid sapiente, voluptate veniam quae laudantium distinctio voluptatibus, fugiat eos libero provident nihil perferendis, excepturi dolores aliquam ex quidem.</h5>
+                </div>`
         })
         new Vue({
             el:"#app",
