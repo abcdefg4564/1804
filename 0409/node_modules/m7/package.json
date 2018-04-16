@@ -1,0 +1,6 @@
+{
+  "version":"2.2.3",
+  "dependencies":{},
+  "main":"./index.js",
+  "author":"Andy Wong"
+}

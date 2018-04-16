@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="AK">
+    <meta name="Keywords" content="WEB,IT,前端">
+    <meta name="Description" content="">
+    <meta http-equiv="Cache-Control" content="max-age-0">
+    <meta http-equiv="refresh" content="555">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no,minimal-ui">
+    <link rel="icon" href="/mylogo32.ico">
+    <link rel="stylesheet" href="/common.css">
+    <link rel="stylesheet" type="text/css" href="/bootstrap-v3.3.7/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/jquery-ui/css/jquery-ui.css">
+    <!-- [if lt IE 9] -->
+    <script type="text/javascript" src="/html5shiv.min.js"></script>
+    <script type="text/javascript" src="/respond.min.js"></script>
+    <!-- [endif] -->
+    <!-- http://www.huangyun.xyz -->
+    <style type="text/css">
+    #body1 {
+        background: #ffffff;
+        color: #f00;
+        font-size: 30px;
+    }
+    </style>
+    <title> AK </title>
+</head>
+
+<body id="body1" onfocus="changeBgColorClk1()">
+    <div id="localtime"></div>
+    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-asterisk"></span>
+    <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-eur          " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-minus        " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-cloud        " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-envelope     " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-pencil       " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-home        " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-music        " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-search       " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-heart        " aria-hidden="true"></span>
+    <span>1425126512</span>
+    <span class="glyphicon glyphicon-star         " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-star-empty   " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-user         " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-film         " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-th-large     " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-th           " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-ok           " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-zoom-in      " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-zoom-out     " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-off          " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-signal       " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-cog          " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-trash        " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-home         " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-file         " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-time         " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-road         " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-download-alt " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-download     " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-upload       " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-inbox        " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-play-circle  " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-repeat       " aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-refresh      " aria-hidden="true"></span>
+    <hr>
+    <div class="d1">
+        <span class="glyphicon glyphicon-heart-empty"></span>
+        <span class="glyphicon glyphicon-heart-empty"></span>
+        <span class="glyphicon glyphicon-heart-empty"></span>
+        <span class="glyphicon glyphicon-heart-empty"></span>
+        <span class="glyphicon glyphicon-heart-empty"></span>
+        <b>打分</b><i>0</i>
+    </div>
+    <div>
+        <ul>
+            <li id="foo">foo</li>
+            <li id="bar">bar</li>
+            <li id="baz">baz</li>
+        </ul>
+    </div>
+    <div class="progress" style="width: 50%">
+        <div class="progress-bar propress-bar-success progress-bar-striped active" style="width:25%;height:36px;color:#f00">25%</div>
+    </div>
+    <div class="progress" style="width: 50%">
+        <div class="progress-bar propress-success" style="width:55%;height:36px;color:#f00">55%</div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+            <span class="sr-only">80% Complete (danger)</span>
+        </div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+            <span class="sr-only">40% Complete (success)</span>
+        </div>
+    </div>
+    <script type="text/javascript" src="/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="/bootstrap-v2.3.2/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/jquery-ui/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="/AK.js"></script>
+    <script>
+    var s1 = $('#bar').index('li');
+    // console.log(s1);
+    $("li").on("click", function() {
+        var s2 = $(this).index("li")
+        // console.log(s2);
+    });
+    $(".d1>span").on("click", function() {
+        var s3 = $(this).index(".d1>span") + 1; //.index("span")	
+        // console.log(s3); 
+        $(".d1>i").html(s3);
+        $(".d1>span").removeClass("glyphicon-heart-empty");
+        for (var i = 0; i < s3; i++) {
+            $(".d1>span:nth-child(" + (i + 1) + ")").addClass("glyphicon-heart");
+
+        }
+        for (var i = 0; i <= 5 - s3; i++) {
+            $(".d1>span:nth-child(" + (i + 1 + s3) + ")").addClass("glyphicon-heart-empty");
+
+        }
+    })
+    </script>
+</body>
+
+</html>
+<script>
+showtime();
+changeBgColor();
+</script>

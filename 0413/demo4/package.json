@@ -1,0 +1,12 @@
+{
+  "name": "demo4",
+  "version": "2.0.0",
+  "description": "good program",
+  "main": "main1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    	"dev":"webpack --config webpack.config.js --colors --progress"
+  },
+  "author": "andy",
+  "license": "ISC"
+}

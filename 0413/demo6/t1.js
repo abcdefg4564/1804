@@ -1,0 +1,1 @@
+import t1 from './t1.css'
