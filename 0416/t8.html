@@ -25,13 +25,24 @@
         background: #ffffff;
         color: #f00;
     }
+    .show{background:#0f0;}
     </style>
     <title> AK </title>
 </head>
 
 <body id="body1" onfocus="changeBgColorClk1()">
     <div id="localtime"></div>
-    <div id="app">{{msg}}</div>
+    <div id="app" >
+    	<button v-on:click="toggle">--BTN--</button><br>
+    	<p :class="{show:isBool}">    		
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    	</p>
+    </div>
     <script type="text/javascript" src="/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="/bootstrap-v2.3.2/js/bootstrap.js"></script>
     <script type="text/javascript" src="/jquery-ui/js/jquery-ui.js"></script>
@@ -43,7 +54,14 @@
         new Vue({
             el:"#app",
             data:{
-                msg:"Hello"
+                msg:"Hello",
+                isBool:true
+            },
+            methods:{
+            	toggle:function () {
+            		this.isBool = ++this.isBool%2;
+            		//this.isBool = !this.isBool
+            	}
             }
         })
     </script>
