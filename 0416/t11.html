@@ -31,7 +31,11 @@
 
 <body id="body1" onfocus="changeBgColorClk1()">
     <div id="localtime"></div>
-    <div id="app">{{msg}}</div>
+    <div id="app">
+        <my-component></my-component>
+        <my-component></my-component>
+        <my-component></my-component>
+    </div>
     <script type="text/javascript" src="/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="/bootstrap-v2.3.2/js/bootstrap.js"></script>
     <script type="text/javascript" src="/jquery-ui/js/jquery-ui.js"></script>
@@ -40,6 +44,9 @@
     <script type="text/javascript" src="/less.js-2.5.3/dist/less.js"></script>
     <script type="text/javascript" src="/AK.js"></script>
     <script>
+        Vue.component('my-component',{
+            template:'<h3>这是一个h3标签</h3>'
+        })
         new Vue({
             el:"#app",
             data:{
