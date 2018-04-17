@@ -25,28 +25,54 @@
         background: #ffffff;
         color: #f00;
     }
+    .myBg{background:#f00}
+    a{letter-spacing: 5px}
     </style>
     <title> AK </title>
 </head>
 
 <body id="body1" onfocus="changeBgColorClk1()">
     <div id="localtime"></div>
-    <div id="app" v-for="tmp in arr" v-if="tmp==nowPage">{{tmp}}</div>
+    <div id="app">
+        <button v-on:click="prevPage"
+                :disabled="nowPage<=1">上一页</button>
 
+        <a href="" 
+         v-for="tmp in arr"       
+         :class="{myBg:tmp==nowPage}"
+         v-on:click.prevent="handleClick(tmp)">
+        {{tmp}}</a>
+
+        <button v-on:click="nextPage"
+                  :disabled="nowPage>=5">下一页</button>
+    </div>
+    <!-- <div id="app">{{arr}}</div> -->
     <script type="text/javascript" src="/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="/bootstrap-v2.3.2/js/bootstrap.js"></script>
     <script type="text/javascript" src="/jquery-ui/js/jquery-ui.js"></script>
     <script src="/layui-v2.2.6/layui/layui.js"></script>
-    <script type="text/javascript" src="/vuejs/vue-v2.5.16.js"></script>  
+    <!-- <script type="text/javascript" src="/vuejs/vue-v2.5.16.js"></script>
+       -->
+       <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script type="text/javascript" src="/less.js-2.5.3/dist/less.js"></script>
     <script type="text/javascript" src="/AK.js"></script>
     <script>
-        new Vue({
+          new Vue({
             el:"#app",
             data:{
-                msg:"Hello",
                 arr:[1,2,3,4,5],
                 nowPage:1
+            },
+            methods:{
+                handleClick:function (num) {
+                    this.nowPage = num;
+                },
+                nextPage:function () {
+                    this.nowPage++
+                },
+                prevPage:function () {
+                    this.nowPage--
+                }
             }
         })
     </script>

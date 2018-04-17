@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="Generator" content="EditPlus®">
@@ -14,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="/bootstrap-v3.3.7/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/jquery-ui/css/jquery-ui.css">
     <link rel="stylesheet" href="/layui-v2.2.6/layui/css/layui.css">
-    <link rel="stylesheet" href="/common.css"> 
+    <link rel="stylesheet" href="/common.css">
     <!-- [if lt IE 9] -->
     <script type="text/javascript" src="/html5shiv.min.js"></script>
     <script type="text/javascript" src="/respond.min.js"></script>
@@ -31,47 +32,35 @@
 
 <body id="body1" onfocus="changeBgColorClk1()">
     <div id="localtime"></div>
-    <div id="app">
-    	<p v-change="'blue'">{{msg}}</p>
-    	<p v-change="'#0f0'">{{msg}}</p>
-		<button @click="handleClick">lorem</button>
+    <div id="app">{{msg}}
+        <input type="text" name="" v-focus="">
     </div>
     <script type="text/javascript" src="/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="/bootstrap-v2.3.2/js/bootstrap.js"></script>
     <script type="text/javascript" src="/jquery-ui/js/jquery-ui.js"></script>
     <script src="/layui-v2.2.6/layui/layui.js"></script>
-    <script type="text/javascript" src="/vuejs/vue-v2.5.16.js"></script>  
+    <script type="text/javascript" src="/vuejs/vue-v2.5.16.js"></script>
     <script type="text/javascript" src="/less.js-2.5.3/dist/less.js"></script>
     <script type="text/javascript" src="/AK.js"></script>
-	<script>
-		Vue.directive('change', {
-		    bind: function(el, bindings) {
-		        console.log('绑定成功');
-		        console.log(el)
-		        console.log(bindings)
-		        el.style.background = bindings.value;
-		    },
-		    unpate: function() {
-		        console.log(111111)
-		    }
-		})
-		new Vue({
-		    el: "#app",
-		    data: {
-		        msg: "Hello"
-		    },
-		    methods: {
-		        handleClick : function() {
-		           this.msg = "hi"
-		           console.log(this.msg)
-		        }
-		    }
-		})
-	</script>
-    
+    <script>
+    Vue.directive('focus', {
+        // 当被绑定的元素插入到 DOM 中时……
+        inserted: function(el) {
+            // 聚焦元素
+            el.focus()
+        }
+    })
+    new Vue({
+        el: "#app",
+        data: {
+            msg: "Hello"
+        }
+    })
+    </script>
     <script>
     showtime();
     changeBgColor();
     </script>
 </body>
+
 </html>
