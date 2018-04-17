@@ -88,9 +88,9 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../node_admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../0417" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="javascript.nodejs.core.library.configured.version" value="6.11.0" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
@@ -225,12 +225,12 @@
       <workItem from="1523413156993" duration="21687000" />
       <workItem from="1523494586153" duration="178000" />
       <workItem from="1523582500524" duration="80000" />
-      <workItem from="1523928835410" duration="626000" />
+      <workItem from="1523928835410" duration="1323000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22571000" />
+    <option name="totallyTimeSpent" value="23268000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1448" height="824" extended-state="0" />

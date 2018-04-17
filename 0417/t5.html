@@ -28,16 +28,13 @@
     }
     *{font-size:20px}
     </style>
-    <title> AK </title>
+    <title>filter</title>
 </head>
 
 <body id="body1" onfocus="changeBgColorClk1()">
     <div id="localtime"></div>
-    <div id="app">{{msg}}
-        <input type="text" name="" v-focus="">
-    </div>
-        <div id="app2">{{msg}}
-        <input type="text" name="" v-focus="" v-color="">
+    <div id="app">
+        <p>性别：{{gender | myfilter(false)}}</p>
     </div>
     <script type="text/javascript" src="/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="/bootstrap-v2.3.2/js/bootstrap.js"></script>
@@ -46,39 +43,39 @@
     <script type="text/javascript" src="/vuejs/vue-v2.5.16.js"></script>
     <script type="text/javascript" src="/less.js-2.5.3/dist/less.js"></script>
     <script type="text/javascript" src="/AK.js"></script>
-    <script>
-    Vue.directive('focus', {
-        // 当被绑定的元素插入到 DOM 中时……
-        inserted: function(el) {
-            // 聚焦元素
-            el.focus();
-            el.style.color="#0f0"
+   <script>
+Vue.filter("myfilter", function(key,arg) {
+    console.log(1255156)
+    if (key == "1") {
+        // return "男";
+        if (arg) {
+        	return "男";
+        }else{
+        	return "male"
         }
-    })
-    new Vue({
-        el: "#app",
-        data: {
-            msg: "Hello"
-        }
-    })
-    new Vue({
-        el: "#app2",
-        data: {
-            msg: "Hello"
-        },
-        directives:{
-        	'color':{
-        		bind:function (el) {
-        			el.style.background= "red"
-        		}
-        	}
-        }
-    })
-    </script>
-    <script>
-    showtime();
-    changeBgColor();
-    </script>
+    } else if(key=="0"){
+        // return "女";
+if (arg) {
+        	return "女";
+        }else{
+        	return "female"
+        }        
+    } else {
+        return "不详";
+    }
+})
+var gen = "0";
+new Vue({
+    el: "#app",
+    data: {
+        gender: gen
+    }
+})
+</script>
+<script>
+showtime();
+changeBgColor();
+</script>
 </body>
 
 </html>
