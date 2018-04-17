@@ -27,15 +27,13 @@
         color: #f00;
     }
     </style>
-    <title>filter</title>
+    <title> AK </title>
 </head>
 
 <body id="body1" onfocus="changeBgColorClk1()">
     <div id="localtime"></div>
     <div id="app">
-        <p>没过滤：{{msg}}</p>    	
-        <p>过滤为*号：{{msg | myfilter1}}</p>
-        <p>过滤为大写/小写：{{msg | myfilter2(false) | transform}}</p>
+        <my-com1></my-com1>
     </div>
     <script type="text/javascript" src="/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="/bootstrap-v2.3.2/js/bootstrap.js"></script>
@@ -45,29 +43,33 @@
     <script type="text/javascript" src="/less.js-2.5.3/dist/less.js"></script>
     <script type="text/javascript" src="/AK.js"></script>
     <script>
-    Vue.filter("transform",function (key) {
-        return "<"+key+">";
-    })
-    Vue.filter("myfilter1", function(key) {
-        console.log(1255156)
-        return "***"
-    })
-    Vue.filter("myfilter2", function(key, arg) {
-        console.log(1255156)
-        // return key.toUpperCase()
-        if (arg) {
-            return key.toUpperCase()
-
-        } else {
-            return key.toLowerCase();
+    Vue.component('my-com1', {
+        template: `<h1 v-bind:style="{opacity:myOpacity}">Lorem ipsum dolor sit amet</h1>`,
+        data:function () {
+        	return {
+        		myOpacity: 0.1
+        	}
+        },
+        mounted: function() {
+        	var dira = 1
+        	setInterval(()=> {
+        		console.log(this)
+        		this.myOpacity+=0.03*dira
+        		if (this.myOpacity>=1) {
+        			dira=-1
+        			this.myOpacity-=0.06
+        		}else if(this.myOpacity<=0){
+        			dira=1 			
+        		}
+        	},100)
         }
     })
     new Vue({
         el: "#app",
         data: {
-            msg: "Hello World"
+            
         }
-    });
+    })
     </script>
     <script>
     showtime();

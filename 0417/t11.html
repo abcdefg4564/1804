@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="zh-CN">
-
 <head>
     <meta charset="UTF-8">
     <meta name="Generator" content="EditPlus®">
@@ -15,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="/bootstrap-v3.3.7/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/jquery-ui/css/jquery-ui.css">
     <link rel="stylesheet" href="/layui-v2.2.6/layui/css/layui.css">
-    <link rel="stylesheet" href="/common.css">
+    <link rel="stylesheet" href="/common.css"> 
     <!-- [if lt IE 9] -->
     <script type="text/javascript" src="/html5shiv.min.js"></script>
     <script type="text/javascript" src="/respond.min.js"></script>
@@ -27,52 +26,44 @@
         color: #f00;
     }
     </style>
-    <title>filter</title>
+    <title> AK </title>
 </head>
 
 <body id="body1" onfocus="changeBgColorClk1()">
     <div id="localtime"></div>
     <div id="app">
-        <p>没过滤：{{msg}}</p>    	
-        <p>过滤为*号：{{msg | myfilter1}}</p>
-        <p>过滤为大写/小写：{{msg | myfilter2(false) | transform}}</p>
+        <p v-for="tmp in arr">{{tmp}}{{aa()}}---{{cc}}</p>
     </div>
     <script type="text/javascript" src="/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="/bootstrap-v2.3.2/js/bootstrap.js"></script>
     <script type="text/javascript" src="/jquery-ui/js/jquery-ui.js"></script>
     <script src="/layui-v2.2.6/layui/layui.js"></script>
-    <script type="text/javascript" src="/vuejs/vue-v2.5.16.js"></script>
+    <script type="text/javascript" src="/vuejs/vue-v2.5.16.js"></script>  
     <script type="text/javascript" src="/less.js-2.5.3/dist/less.js"></script>
     <script type="text/javascript" src="/AK.js"></script>
     <script>
-    Vue.filter("transform",function (key) {
-        return "<"+key+">";
-    })
-    Vue.filter("myfilter1", function(key) {
-        console.log(1255156)
-        return "***"
-    })
-    Vue.filter("myfilter2", function(key, arg) {
-        console.log(1255156)
-        // return key.toUpperCase()
-        if (arg) {
-            return key.toUpperCase()
-
-        } else {
-            return key.toLowerCase();
-        }
-    })
-    new Vue({
-        el: "#app",
-        data: {
-            msg: "Hello World"
-        }
-    });
+        new Vue({
+            el:"#app",
+            data:{
+                msg:"Hello",
+                arr:[111,222,333]
+            },
+            methods:{
+                aa:function () {
+                    console.log("执行了")
+                }
+            },
+            computed:{
+                cc:function () {
+                    console.log("computed执行了")
+                }                
+            }
+        })
     </script>
+    
     <script>
     showtime();
     changeBgColor();
     </script>
 </body>
-
 </html>

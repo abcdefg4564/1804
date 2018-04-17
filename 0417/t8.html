@@ -27,15 +27,15 @@
         color: #f00;
     }
     </style>
-    <title>filter</title>
+    <title> AK </title>
 </head>
 
 <body id="body1" onfocus="changeBgColorClk1()">
     <div id="localtime"></div>
     <div id="app">
-        <p>没过滤：{{msg}}</p>    	
-        <p>过滤为*号：{{msg | myfilter1}}</p>
-        <p>过滤为大写/小写：{{msg | myfilter2(false) | transform}}</p>
+        <container></container>  
+        <container></container>    
+        <container></container>  
     </div>
     <script type="text/javascript" src="/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="/bootstrap-v2.3.2/js/bootstrap.js"></script>
@@ -45,29 +45,37 @@
     <script type="text/javascript" src="/less.js-2.5.3/dist/less.js"></script>
     <script type="text/javascript" src="/AK.js"></script>
     <script>
-    Vue.filter("transform",function (key) {
-        return "<"+key+">";
+    Vue.component("container", {
+        template: `<form>
+                        <title1></title1>
+                        <content1></content1> 
+                        <send></send>
+                    </form>`
     })
-    Vue.filter("myfilter1", function(key) {
-        console.log(1255156)
-        return "***"
+    Vue.component("title1", {
+        template: `<div>
+                        <input type="text" />
+                    </div>`
+    });
+    Vue.component("content1", {
+        template: `<div>
+                        <textarea cols='60' rows='10' style="background:#ccc">rwqr</textarea>
+                       
+                    </div>`
     })
-    Vue.filter("myfilter2", function(key, arg) {
-        console.log(1255156)
-        // return key.toUpperCase()
-        if (arg) {
-            return key.toUpperCase()
 
-        } else {
-            return key.toLowerCase();
-        }
-    })
+    Vue.component("send", {
+        template: `<div>
+                        <button>提交</button>
+                        <input type="reset"/>
+                    </div>` 
+    });
     new Vue({
         el: "#app",
         data: {
-            msg: "Hello World"
+            msg: "Hello"
         }
-    });
+    })
     </script>
     <script>
     showtime();
