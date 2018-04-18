@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="Generator" content="EditPlus®">
@@ -14,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="/bootstrap-v3.3.7/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/jquery-ui/css/jquery-ui.css">
     <link rel="stylesheet" href="/layui-v2.2.6/layui/css/layui.css">
-    <link rel="stylesheet" href="/common.css"> 
+    <link rel="stylesheet" href="/common.css">
     <!-- [if lt IE 9] -->
     <script type="text/javascript" src="/html5shiv.min.js"></script>
     <script type="text/javascript" src="/respond.min.js"></script>
@@ -32,39 +33,69 @@
 <body id="body1" onfocus="changeBgColorClk1()">
     <div id="localtime"></div>
     <div id="app">
-        <father></father>
+        <my-chatroom></my-chatroom>
     </div>
     <script type="text/javascript" src="/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="/bootstrap-v2.3.2/js/bootstrap.js"></script>
     <script type="text/javascript" src="/jquery-ui/js/jquery-ui.js"></script>
     <script src="/layui-v2.2.6/layui/layui.js"></script>
-    <script type="text/javascript" src="/vuejs/vue-v2.5.16.js"></script>  
+    <script type="text/javascript" src="/vuejs/vue-v2.5.16.js"></script>
     <script type="text/javascript" src="/less.js-2.5.3/dist/less.js"></script>
     <script type="text/javascript" src="/AK.js"></script>
     <script>
-    	Vue.component("father",{
-    		template:`<div>
-				<son title="时尚达人" id="1"></son>
-				<son title="生活百货" id="2"></son>
-    		</div>`
-    	})
-    	Vue.component("son",{    		
-    		template:`<div>
-				<h2>{{id}}---{{title}}</h2>
+    Vue.component("my-chatroom", {
+    	data:function () {
+    		return {
+    			list:[100,200,300]
+    		}
+    	},
+        template: `<div>
+        		<ul v-for="tmp in list">{{tmp}}</ul>
+				<my-input myname="Tom" @customEvent="revMsg"></my-input>
+				<my-input myname="Jerry" @customEvent="revMsg"></my-input>
     		</div>`,
-    		props:['title','id']
-    	})
-        new Vue({
-            el:"#app",
-            data:{
-                msg:"Hello"
-            }
-        })
+    		methods:{
+    			revMsg:function (myMsg) {
+    				console.log("success..."+myMsg)
+    			}
+    		}
+    });
+    // Vue.component("my-show", {
+    //     template: `<div>
+				
+    // 		</div>`
+    // });
+    Vue.component("my-input", {
+		data:function () {
+    		return {
+    			list:[100,200,300]
+    		}
+    	},    	
+        template: `<div>
+				<label for="">{{myname}}</label>
+				<input type="text"  v-model="myMsg">
+				<input type="button"  @click="sendMsg" value="发送" />
+    		</div>`,
+    		props:['myname'],
+    		methods:{
+    			sendMsg:function () {
+    				this.myMsg = this.myname+":"+this.myMsg;
+    				this.$emit("customEvent",this.myMsg);
+    				this.myMsg="";
+    			}
+    		}
+    });
+    new Vue({
+        el: "#app",
+        data: {
+            msg: "Hello"
+        }
+    })
     </script>
-    
     <script>
     showtime();
     changeBgColor();
     </script>
 </body>
+
 </html>

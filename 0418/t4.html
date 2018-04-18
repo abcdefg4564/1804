@@ -44,15 +44,26 @@
     <script>
     	Vue.component("father",{
     		template:`<div>
-				<son title="时尚达人" id="1"></son>
-				<son title="生活百货" id="2"></son>
-    		</div>`
-    	})
-    	Vue.component("son",{    		
-    		template:`<div>
-				<h2>{{id}}---{{title}}</h2>
+				<h2>这是小头爸爸</h2>
+				<son @customEvent="revMsg($event)"></son>
     		</div>`,
-    		props:['title','id']
+    		methods:{
+    			revMsg:function (message) {
+    				console.log(massage)
+    			}
+    		}
+    	})
+    	Vue.component("son",{
+    			template:`<div>
+					<h3>这是大头儿子</h3>
+					<button @click="sendToF">说话</button>					
+    			</div>`,
+    			methods:{
+    				sendToF:function () {
+    					console.log(2222)
+    					this.$emit("customEvent","hello")
+    				}
+    			}
     	})
         new Vue({
             el:"#app",
