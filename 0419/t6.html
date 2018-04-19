@@ -44,7 +44,7 @@
     <script type="text/javascript" src="/less.js-2.5.3/dist/less.js"></script>
     <script type="text/javascript" src="/AK.js"></script>
     <script>
-    var checkComp = Vue.component("check/:price", {
+    var checkComp = Vue.component("check", {
         template: `<div>
 				<p>商品：服装，食品</p>
 				<router-link to="">
@@ -64,7 +64,7 @@
     			console.log(res)
     		}
     })
-    var succesComp = Vue.component("success", {
+    var buyComp = Vue.component("buy", {
         template: `<div>
 				<p>购买成功</p>
     		</div>`
@@ -76,13 +76,13 @@
             // redirect:"/check"
         }, {
             path: "/check",
-            component: detailComp
+            component: checkComp
         }, {
             path: "/confirm",
             component: confirmComp
         }, {
-            path: "/success",
-            component: succesComp
+            path: "/buy",
+            component: buyComp
         }]
     })
     new Vue({
