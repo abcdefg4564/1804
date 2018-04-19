@@ -73,10 +73,10 @@
     			}
     		},
     		template:`<ul>
-				<todo-itme 
+				<todo-item 
 					:cont="tmp" 
 					v-for="(tmp,index) in myMsg"
-					:key="index"></todo-itme>
+					:key="index"></todo-item>
     		</ul>`,
     		mounted: function(){
     			bus.$on("customEvent", (msg)=> {
@@ -86,7 +86,7 @@
     			})
     		}
     	})
-    	Vue.component("todo-itme",{
+    	Vue.component("todo-item",{
     		template:`<li>{{cont}}</li>`,
     		props:["cont"],
     		mounted:function () {
