@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="AK">
+    <meta name="Keywords" content="WEB,IT,前端">
+    <meta name="Description" content="">
+    <meta http-equiv="Cache-Control" content="max-age-0">
+    <meta http-equiv="refresh" content="555">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no,minimal-ui">
+    <link rel="icon" href="/mylogo32.ico">
+    <link rel="stylesheet" type="text/css" href="/bootstrap-v3.3.7/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/jquery-ui/css/jquery-ui.css">
+    <link rel="stylesheet" href="/layui-v2.2.6/layui/css/layui.css">
+    <link rel="stylesheet" href="/common.css"> 
+    <!-- [if lt IE 9] -->
+    <script type="text/javascript" src="/html5shiv.min.js"></script>
+    <script type="text/javascript" src="/respond.min.js"></script>
+    <!-- [endif] -->
+    <!-- http://www.huangyun.xyz -->
+    <style type="text/css">
+    #body1 {
+        background: #ffffff;
+        color: #f00;
+    }
+    *{font-size:20px}
+    .v-enter,.v-leave-to{
+		transform: translate(200px);
+    }
+    .v-enter-active,.v-leave-active{
+		transition: all 0.5s;
+    }
+    </style>
+    <title> AK </title>
+</head>
+
+<body id="body1" onfocus="changeBgColorClk1()">
+    <div id="localtime"></div>
+    <div id="app">
+        <!-- <button @mouseover="isBool=!isBool" @mouseout="isBool=!isBool">切换</button>
+        <h2 v-show="isBool">{{msg}}</h2> -->
+        <button @click="isBool=!isBool">asfsafas</button>
+        <transition><h2 v-show="isBool">
+        	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2></transition>
+    </div>
+    <script type="text/javascript" src="/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="/bootstrap-v2.3.2/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/jquery-ui/js/jquery-ui.js"></script>
+    <script src="/layui-v2.2.6/layui/layui.js"></script>
+    <script type="text/javascript" src="/vuejs/vue-v2.5.16.js"></script>
+    <script type="text/javascript" src="/vuejs/vue-router.js"></script>      
+    <script type="text/javascript" src="/less.js-2.5.3/dist/less.js"></script>
+    <script type="text/javascript" src="/AK.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                msg:"Hello",
+                isBool:false
+            }
+        })
+    </script>
+    
+    <script>
+    showtime();
+    changeBgColor();
+    </script>
+</body>
+</html>
