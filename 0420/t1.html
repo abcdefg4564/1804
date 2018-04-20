@@ -83,6 +83,11 @@
     			<h3>这是发票信息</h3>
     		</div>`
     })
+    var Page404Comp = Vue.component("page404", {
+        template: `<div>
+                <h3>404了</h3>
+            </div>`
+    })
     var router = new VueRouter({
         routes: [{
             path: "/",
@@ -99,6 +104,9 @@
             }, {
                 path: '/fp',
                 component: FpComp
+            },{
+                path:"*",
+                component:Page404Comp
             }]
         }]
     })
